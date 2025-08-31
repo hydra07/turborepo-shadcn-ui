@@ -1,46 +1,46 @@
 # Turborepo + Next.js + Tailwind CSS + shadcn/ui Template
 
-A modern monorepo template built with **Turborepo**, **Next.js 15**, **Tailwind CSS v4**, and **shadcn/ui**. This template provides an optimized structure for developing web applications with a shared UI library.
+Một monorepo template hiện đại được xây dựng với **Turborepo**, **Next.js 15**, **Tailwind CSS v4**, và **shadcn/ui**. Template này cung cấp cấu trúc tối ưu để phát triển các ứng dụng web với thư viện UI chia sẻ.
 
-## Features
+## Tính năng
 
-- **Monorepo Architecture** with Turborepo
-- **Next.js 15** with App Router and Turbopack
-- **Tailwind CSS v4** with optimized configuration
-- **shadcn/ui** components with custom variants
-- **Shared UI Library** for reusability
-- **TypeScript** with strict configuration
-- **ESLint & Prettier** with standard rules
-- **Bun** as package manager
+- **Monorepo Architecture** với Turborepo
+- **Next.js 15** với App Router và Turbopack
+- **Tailwind CSS v4** với cấu hình tối ưu
+- **shadcn/ui** components với custom variants
+- **Shared UI Library** có thể tái sử dụng
+- **TypeScript** với cấu hình strict
+- **ESLint & Prettier** với rules chuẩn
+- **Bun** làm package manager
 
-## Requirements
+## Yêu cầu
 
-- **Node.js** ≥ 18 (recommended 20+)
-- **Bun** 1.2.20 (or npm/pnpm)
+- **Node.js** ≥ 18 (khuyến nghị 20+)
+- **Bun** 1.2.20 (hoặc npm/pnpm)
 - **Git**
 
-## Installation
+## Cài đặt
 
 ```bash
 # Clone repository
 git clone https://github.com/hydra07/turborepo-shadcn-ui.git
 cd template
 
-# Install dependencies
+# Cài đặt dependencies
 bun install
 
-# Start development server
+# Chạy development server
 bun run dev
 ```
 
-Visit the application at: [http://localhost:3000](http://localhost:3000)
+Truy cập ứng dụng tại: [http://localhost:3000](http://localhost:3000)
 
-## Project Structure
+## Cấu trúc project
 
 ```
 template/
 ├── apps/
-│   └── web/                    # Main Next.js application
+│   └── web/                    # Next.js application chính
 │       ├── app/               # App Router pages
 │       │   ├── page.tsx       # Homepage
 │       │   ├── layout.tsx     # Root layout
@@ -56,7 +56,7 @@ template/
 │   │   │   ├── lib/          # Utility functions
 │   │   │   └── globals.css   # UI library styles
 │   │   ├── components.json   # shadcn/ui config
-│   │   ├── tailwind.config.ts # Tailwind config for UI
+│   │   ├── tailwind.config.ts # Tailwind config cho UI
 │   │   └── package.json
 │   ├── eslint-config/         # Shared ESLint config
 │   ├── typescript-config/     # Shared TypeScript config
@@ -69,21 +69,21 @@ template/
 
 ```bash
 # Development
-bun run dev          # Run all apps in development mode
-bun run build        # Build all packages and apps
-bun run lint         # Lint entire codebase
-bun run format       # Format code with Prettier
-bun run check-types  # Check TypeScript types
+bun run dev          # Chạy tất cả apps trong chế độ dev
+bun run build        # Build tất cả packages và apps
+bun run lint         # Lint toàn bộ codebase
+bun run format       # Format code với Prettier
+bun run check-types  # Kiểm tra TypeScript types
 ```
 
-## Adding shadcn/ui Components
+## Thêm shadcn/ui components
 
 ```bash
 cd packages/ui
 bunx shadcn add button card input dialog
 ```
 
-Using components:
+Sử dụng components:
 
 ```tsx
 import { Button } from "@repo/ui/components/ui/button";
@@ -103,23 +103,23 @@ export default function Page() {
 }
 ```
 
-## Tailwind CSS Configuration
+## Cấu hình Tailwind CSS
 
-This project uses **Tailwind CSS v4** with modern configuration:
+Project sử dụng **Tailwind CSS v4** với cấu hình hiện đại:
 
-### Shared Configuration
-- `packages/tailwind-config/shared-styles.css` - Contains `@theme` variables
-- `packages/ui/tailwind.config.ts` - Config for UI library
-- `packages/ui/src/globals.css` - Styles with `@config` and `@theme`
+### Cấu hình chia sẻ
+- `packages/tailwind-config/shared-styles.css` - Chứa `@theme` variables
+- `packages/ui/tailwind.config.ts` - Config riêng cho UI library
+- `packages/ui/src/globals.css` - Styles với `@config` và `@theme`
 
-### Configuration in Next.js
+### Cấu hình trong Next.js
 ```css
 /* apps/web/app/globals.css */
 @import "tailwindcss";
 @import "@repo/tailwind-config";
 ```
 
-### Configuration in UI Library
+### Cấu hình trong UI Library
 ```css
 /* packages/ui/src/globals.css */
 @import "tailwindcss";
@@ -131,23 +131,23 @@ This project uses **Tailwind CSS v4** with modern configuration:
 }
 ```
 
-## Switching Package Manager
+## Chuyển đổi Package Manager
 
-### From Bun to pnpm
+### Từ Bun sang pnpm
 ```json
 {
   "packageManager": "pnpm@9.12.0"
 }
 ```
 
-### From Bun to npm
+### Từ Bun sang npm
 ```json
 {
   "packageManager": "npm@10.9.0"
 }
 ```
 
-After changing:
+Sau khi thay đổi:
 ```bash
 rm -rf node_modules bun.lockb
 pnpm install
@@ -156,23 +156,23 @@ pnpm dev
 
 ## Development Workflow
 
-1. **Add new component**:
+1. **Tạo component mới**:
    ```bash
    cd packages/ui
    bunx shadcn add <component-name>
    ```
 
-2. **Use in app**:
+2. **Sử dụng trong app**:
    ```tsx
    import { Button } from "@repo/ui/components/ui/button";
    ```
 
-3. **Development with hot reload**:
+3. **Development với hot reload**:
    ```bash
    bun run dev
    ```
 
-## References
+## Tài liệu tham khảo
 
 - [Turborepo Documentation](https://turbo.build/repo/docs)
 - [Next.js Documentation](https://nextjs.org/docs)
@@ -183,11 +183,11 @@ pnpm dev
 ## Contributing
 
 1. Fork repository
-2. Create feature branch (`git checkout -b feature/amazing-feature`)
+2. Tạo feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit changes (`git commit -m 'Add amazing feature'`)
 4. Push to branch (`git push origin feature/amazing-feature`)
-5. Create Pull Request
+5. Tạo Pull Request
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+MIT License - xem file [LICENSE](LICENSE) để biết thêm chi tiết.
