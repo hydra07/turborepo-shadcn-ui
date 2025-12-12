@@ -1,12 +1,16 @@
 {
-  "name": "with-tailwind",
+  "name": "template",
   "private": true,
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "check-types": "turbo run check-types",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "clean": "rm -rf node_modules **/*/node_modules **/.next **/.turbo pnpm-lock.yaml",
+    "nuke": "pnpm clean && pnpm install",
+    "add:web": "pnpm add --filter web",
+    "add:ui": "pnpm add --filter @repo/ui"
   },
   "devDependencies": {
     "prettier": "^3.6.0",
@@ -16,9 +20,5 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "bun@1.2.20",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  "packageManager": "pnpm@10.25.0"
 }
